@@ -13,7 +13,7 @@ SettingsManager::SettingsManager(QString settingsFile)
 #endif
 
     // проверка на существование файла с настройками
-    if (this->settingsFileExists(settingsFile))
+    if (!this->settingsFileExists(settingsFile))
     {
         // если не существует, выводим соответствующее сообщение
         qInfo() << "Settings file not found. Generate default settings.";
@@ -111,7 +111,7 @@ void SettingsManager::generateDefaultSettings()
         settings->setValue("ClientUrl", "http://localhost:8888/lab");
         settings->setValue("LaunchTimeout", 5);
         settings->setValue("WorkingDir", "/Users/xtail");
-        settings->setValue("ServerPath", "usr/local/bin/jupyter-lab");
+        settings->setValue("ServerPath", "/usr/local/bin/jupyter-lab");
     settings->endGroup();
 
     // применяем изменения

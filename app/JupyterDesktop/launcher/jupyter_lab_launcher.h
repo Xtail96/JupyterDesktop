@@ -9,7 +9,7 @@ class JupyterLabLauncher : public QObject
 {
     Q_OBJECT
 public:
-    explicit JupyterLabLauncher(QObject *parent = nullptr);
+    explicit JupyterLabLauncher(QString jupyterLabPath, QString workingDirectory, QObject *parent = nullptr);
     ~JupyterLabLauncher();
 
     void launch();
@@ -19,8 +19,8 @@ signals:
     void ready();
 
 private:
-    QProcess m_lab;
-    QString m_labPath;
+    QProcess m_jupyterLabProcess;
+    QString m_jupyterLabPath;
     QString m_workingDir;
 
 

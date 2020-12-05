@@ -1,10 +1,10 @@
 #include "jupyter_lab_launcher.h"
 
-JupyterLabLauncher::JupyterLabLauncher(QObject *parent) :
+JupyterLabLauncher::JupyterLabLauncher(QString jupyterLabPath, QString workingDirectory, QObject *parent) :
     QObject(parent),
-    m_lab(this),
-    m_labPath("/usr/local/bin/jupyter-lab"),
-    m_workingDir("/Users/xtail")
+    m_jupyterLabProcess(this),
+    m_jupyterLabPath(jupyterLabPath),
+    m_workingDir(workingDirectory)
 { 
 }
 
@@ -15,13 +15,13 @@ JupyterLabLauncher::~JupyterLabLauncher()
 
 void JupyterLabLauncher::launch()
 {
-    m_lab.setWorkingDirectory(m_workingDir);
-    m_lab.start(m_labPath);
-    m_lab.waitForStarted(-1);
+    m_jupyterLabProcess.setWorkingDirectory(m_workingDir);
+    m_jupyterLabProcess.start(m_jupyterLabPath);
+    m_jupyterLabProcess.waitForStarted(-1);
 }
 
 void JupyterLabLauncher::terminate()
 {
-    m_lab.kill();
-    m_lab.waitForFinished(-1);
+    m_jupyterLabProcess.kill();
+    m_jupyterLabProcess.waitForFinished(-1);
 }

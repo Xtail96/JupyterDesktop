@@ -86,7 +86,7 @@ public:
      */
     QStringList settingsKeys();
 
-    bool settingsFileExists(QString settingsFile = DEFAULT_SETTINGS_FILE);
+    static bool settingsFileExists(QString settingsFile = DEFAULT_SETTINGS_FILE);
 };
 
 #endif // SETTINGSMANAGER_H
