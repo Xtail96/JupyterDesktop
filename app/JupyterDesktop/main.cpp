@@ -1,7 +1,7 @@
 #include <QApplication>
 #include <QWebEngineView>
 #include <QThread>
-#include "jupyter_lab_launcher.h"
+#include "launcher/jupyter_lab_launcher.h"
 
 int main(int argc, char *argv[])
 {

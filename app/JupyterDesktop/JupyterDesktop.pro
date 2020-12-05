@@ -16,11 +16,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    jupyter_lab_launcher.cpp \
-    main.cpp
+    launcher/jupyter_lab_launcher.cpp \
+    main.cpp \
+    settings_manager/settings_manager.cpp
 
 HEADERS += \
-    jupyter_lab_launcher.h
+    launcher/jupyter_lab_launcher.h \
+    settings_manager/settings_manager.h
 
 FORMS +=
 
