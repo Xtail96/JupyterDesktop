@@ -16,15 +16,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    configuration_dialog.cpp \
     launcher/jupyter_lab_launcher.cpp \
     main.cpp \
     settings_manager/settings_manager.cpp
 
 HEADERS += \
+    configuration_dialog.h \
     launcher/jupyter_lab_launcher.h \
     settings_manager/settings_manager.h
 
-FORMS +=
+FORMS += \
+    configuration_dialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
