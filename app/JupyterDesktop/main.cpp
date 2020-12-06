@@ -3,7 +3,7 @@
 #include <QThread>
 #include "launcher/jupyter_lab_launcher.h"
 #include "settings_manager/settings_manager.h"
-#include "configuration_dialog.h"
+#include "gui/configuration_dialog.h"
 
 void configure()
 {
