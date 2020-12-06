@@ -7,7 +7,6 @@
 
 void configure()
 {
-    qDebug() << "configure";
     ConfigurationDialog(nullptr).exec();
 }
 
@@ -15,9 +14,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    //if(!SettingsManager::settingsFileExists()) configure();
-
-    configure();
+    if(!SettingsManager::settingsFileExists()) configure();
 
     SettingsManager sm;
     JupyterLabLauncher launcher(sm.get("Main", "ServerPath").toString(), sm.get("Main", "WorkingDir").toString(), nullptr);

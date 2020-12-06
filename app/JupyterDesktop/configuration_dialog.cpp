@@ -38,3 +38,17 @@ void ConfigurationDialog::fillSettings()
         ui->settingsTableWidget->setItem(i, 0, new QTableWidgetItem(value));
     }
 }
+
+void ConfigurationDialog::on_buttonBox_accepted()
+{
+    SettingsManager s;
+    for(int i = 0; i < ui->settingsTableWidget->rowCount(); i++)
+    {
+        auto header = ui->settingsTableWidget->verticalHeaderItem(i)->text();
+        QString group = header.split("/").first();
+        QString key = header.split("/").last();
+
+        QString value = ui->settingsTableWidget->item(i, 0)->text();
+        s.set(group, key, value);
+    }
+}
