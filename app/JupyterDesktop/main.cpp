@@ -17,14 +17,14 @@ int main(int argc, char *argv[])
     if(!SettingsManager::settingsFileExists()) configure();
 
     SettingsManager sm;
-    JupyterLabLauncher launcher(sm.get("Main", "ServerPath").toString(), sm.get("Main", "WorkingDir").toString(), nullptr);
+    JupyterLabLauncher launcher(sm.get("General", "ServerPath").toString(), sm.get("General", "WorkingDir").toString(), nullptr);
     launcher.launch();
 
     // пауза, чтобы сервер запустился
-    QThread::sleep(sm.get("Main", "LaunchTimeout").toInt());
+    QThread::sleep(sm.get("General", "LaunchTimeout").toInt());
 
     QWebEngineView *view = new QWebEngineView(nullptr);
-    view->load(QUrl(sm.get("Main", "ClientUrl").toString()));
+    view->load(QUrl(sm.get("General", "ClientUrl").toString()));
     view->showMaximized();
 
     return a.exec();

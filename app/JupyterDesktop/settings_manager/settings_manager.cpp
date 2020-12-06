@@ -107,7 +107,7 @@ void SettingsManager::set(QString group, QString key, QVariant value)
 
 void SettingsManager::generateDefaultSettings()
 {
-    settings->beginGroup("Main");
+    settings->beginGroup("General");
         settings->setValue("ClientUrl", "http://localhost:8888/lab");
         settings->setValue("LaunchTimeout", 5);
         settings->setValue("WorkingDir", "/");
