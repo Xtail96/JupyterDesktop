@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
     // Запускаем сервер
     SettingsManager sm;
-    JupyterLabLauncher launcher(sm.get("General", "ServerPath").toString(), sm.get("General", "WorkingDir").toString(), nullptr);
+    JupyterLabLauncher launcher(sm.get("General", "ServerPath").toString(), sm.get("General", "RootDir").toString(), nullptr);
     launcher.launch();
 
     // Пауза, чтобы сервер успел запуститься

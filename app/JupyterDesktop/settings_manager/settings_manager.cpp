@@ -105,7 +105,7 @@ void SettingsManager::generateDefaultSettings()
     settings->beginGroup("General");
         settings->setValue("ClientUrl", "http://localhost:8888/lab");
         settings->setValue("LaunchTimeout", 5);
-        settings->setValue("WorkingDir", "/");
+        settings->setValue("RootDir", "/");
         settings->setValue("ServerPath", "/usr/local/bin/jupyter-lab");
     settings->endGroup();
 
