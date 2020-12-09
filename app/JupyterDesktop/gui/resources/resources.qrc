@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/jupyter_logo.jpeg</file>
+    </qresource>
+</RCC>

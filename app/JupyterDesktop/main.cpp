@@ -4,6 +4,9 @@
 #include "launcher/jupyter_lab_launcher.h"
 #include "settings_manager/settings_manager.h"
 #include "gui/configuration_dialog.h"
+#include "gui/splash_screen_dialog.h"
+
+#include <QLabel>
 
 void configure()
 {
@@ -21,9 +24,13 @@ int main(int argc, char *argv[])
     launcher.launch();
 
     // пауза, чтобы сервер запустился
+    QScopedPointer<SplashScreenDialog> splash(new SplashScreenDialog(nullptr));
+    splash->show();
+    QApplication::processEvents();
     QThread::sleep(sm.get("General", "LaunchTimeout").toInt());
+    splash->close();
 
-    QWebEngineView *view = new QWebEngineView(nullptr);
+    QScopedPointer<QWebEngineView> view(new QWebEngineView(nullptr));
     view->load(QUrl(sm.get("General", "ClientUrl").toString()));
     view->showMaximized();
 

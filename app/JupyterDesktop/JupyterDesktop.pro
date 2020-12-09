@@ -17,17 +17,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     gui/configuration_dialog.cpp \
+    gui/splash_screen_dialog.cpp \
     launcher/jupyter_lab_launcher.cpp \
     main.cpp \
     settings_manager/settings_manager.cpp
 
 HEADERS += \
     gui/configuration_dialog.h \
+    gui/splash_screen_dialog.h \
     launcher/jupyter_lab_launcher.h \
     settings_manager/settings_manager.h
 
 FORMS += \
-    gui/configuration_dialog.ui
+    gui/configuration_dialog.ui \
+    gui/splash_screen_dialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -38,3 +41,6 @@ macx:ICON = $${PWD}/logo.icns
 
 DISTFILES += \
     logo.icns \
+
+RESOURCES += \
+    gui/resources/resources.qrc
