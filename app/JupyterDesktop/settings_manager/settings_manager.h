@@ -9,8 +9,9 @@
 #include <memory>
 #include <QDebug>
 
-#define DEFAULT_SETTINGS_DIR ""
+#define DEFAULT_SETTINGS_DIR qApp->applicationDirPath()
 #define DEFAULT_SETTINGS_FILE "JupyterDesktopSettings.ini"
+#define DEFAULT_SETTINGS_FILE_PATH DEFAULT_SETTINGS_DIR + "/" + DEFAULT_SETTINGS_FILE
 
 /**
  * @brief Класс для работы с настройками станка
@@ -86,7 +87,7 @@ public:
      */
     QStringList settingsKeys();
 
-    static bool settingsFileExists(QString settingsFile = DEFAULT_SETTINGS_FILE);
+    static bool settingsFileExists(QString settingsFile = DEFAULT_SETTINGS_FILE_PATH);
 };
 
 #endif // SETTINGSMANAGER_H
