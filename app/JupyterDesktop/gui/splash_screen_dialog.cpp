@@ -7,7 +7,7 @@ SplashScreenDialog::SplashScreenDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QPixmap p(":/images/jupyter_logo.jpeg");
+    QPixmap p(":/images/k5ovG.png");
     ui->label->setPixmap(p);
     ui->label->setScaledContents(true);
 }
