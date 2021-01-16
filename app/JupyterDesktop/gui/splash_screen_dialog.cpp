@@ -7,7 +7,7 @@ SplashScreenDialog::SplashScreenDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QPixmap p(":/images/k5ovG.png");
+    QPixmap p(":/images/574595169.png");
     ui->label->setPixmap(p);
     ui->label->setScaledContents(true);
 }
